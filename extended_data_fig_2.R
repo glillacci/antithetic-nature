@@ -12,7 +12,7 @@ graphics.off ()
 
 # Fixed parameters
 da = c (log(2)/25)
-w = 5*da[1]
+w = 1*da[1]
 k5 = 0.5*da[1]
 k3 = 0.05
 
@@ -25,7 +25,7 @@ maxerr = 0
 
 # Define number of points of grid in each dimesion
 # For these simulations, we use 2 fixed values of k
-N = c (10, 10, 2)
+N = c (100, 100, 2)
 
 # Create grid of log-spaced values for variable parameters
 mu_seq = 10^(seq (log10 (1e0), log10 (1e4), length.out = N[1]))
@@ -141,14 +141,12 @@ anifun = function (s)
 	# Add region of essr < 0.05 for bacteria
 	.filled.contour(log10(mu_seq), log10(theta_seq), essr[,,s,1], levels = c(0, 0.05), col = c('lightgreen', 'white'))
 	# Calculate levels for contours of ssy0
-	levs = 10^(seq( log10 (min(ssy0[,,s,1])), log10(max(ssy0[,,s,1])), length.out = 20))
-	levs = signif (levs, 3)
+	levs = c(10000)
 	# Add contour plots of ssy0
 	contour(log10(mu_seq), log10(theta_seq), ssy0[,,s,1], levels = levs, labcex = 1, add=T)
 }
 
 
-## Plot the figure in the paper
-## This generates extended data fig. 1d
+## Plot the figures in the paper
 anifun(1)
-
+anifun(2)
