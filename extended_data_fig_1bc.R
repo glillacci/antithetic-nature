@@ -3,9 +3,6 @@
 
 # Simulations presented in Extended Data Figures 1b and 1c
 
-# Load packages
-library (lattice)
-
 # Clean up & initialize
 rm (list = ls ())
 graphics.off ()
@@ -69,7 +66,6 @@ cat ('\n')
 
 ## Plotting function. This function will generate a 2-d plot showing a slice of the 3D parameter grid,
 ## i.e. a 2D plot for a fixed value of k. The argument s is the index of k_seq containing the value of k to plot.
-
 anifun = function (s) 
 {
 	# Init graphic device
