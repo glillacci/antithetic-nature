@@ -12,14 +12,14 @@ graphics.off ()
 # Fixed parameters
 d = log(2)/25
 w = 5*d
-k5 = 0;
-k3 = 100;
+k5 = 0.5*d
+k3 = 0.05
 
 # Define number of points of grid in each dimesion
 N = c (100, 100, 100)
 
 # Create grid of log-spaced values for variable parameters
-p1seq = 10^(seq (log10 (1e-2), log10 (1e2), length.out = N[1]))
+p1seq = 10^(seq (log10 (1), log10 (1e4), length.out = N[1]))
 p2seq = 10^(seq (log10 (1e-2), log10 (1e2), length.out = N[2]))
 p3seq = 10^(seq (log10 (1e-2), log10 (1e2), length.out = N[3]))
 
